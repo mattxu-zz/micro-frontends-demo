@@ -3,7 +3,7 @@
 The team owning the product page includes the recommendations using an iFrame.
 
 Pros
-- 
+
 
 Cons
 - SEO
