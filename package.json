@@ -8,11 +8,10 @@
     "02_iframe": "concurrently --names \"decide ,inspire\" \"mfserve --listen 3001 02_iframe/team-decide\" \"mfserve --listen 3002 02_iframe/team-inspire\" \"wait-on http://localhost:3001/product/porsche && opener http://localhost:3001/product/porsche\"",
     "03_ssi": "concurrently --names \"nginx  ,decide ,inspire\" \"node nginx.js 03_ssi/webserver/nginx.conf\" \"mfserve --listen 3001 03_ssi/team-decide\" \"mfserve --listen 3002 03_ssi/team-inspire\" \"wait-on http://localhost:3000/product/porsche && opener http://localhost:3000/product/porsche\"",
     "04_web_components": "concurrently --names \"decide  ,inspire ,checkout\" \"mfserve --listen 3001 04_web_components/team-decide\" \"mfserve --listen 3002 04_web_components/team-inspire\" \"mfserve --listen 3003 04_web_components/team-checkout\" \"wait-on http://localhost:3001/product/fendt && opener http://localhost:3001/product/fendt\"",
-    "05_shadow_dom": "concurrently --names \"decide  ,inspire ,checkout\" \"mfserve --listen 3001 05_shadow_dom/team-decide\" \"mfserve --listen 3002 --cors 05_shadow_dom/team-inspire\" \"mfserve --listen 3003 05_shadow_dom/team-checkout\" \"wait-on http://localhost:3001/product/fendt && opener http://localhost:3001/product/fendt\"",
-    "06_single_spa": "concurrently --names \"app-shell,decide   ,inspire  ,checkout \" \"mfserve --listen 3000 --single 06_single_spa/app-shell\" \"mfserve --listen 3001 --cors 06_single_spa/team-decide\" \"mfserve --listen 3002 --cors 06_single_spa/team-inspire\" \"mfserve --listen 3003 --cors 06_single_spa/team-checkout\" \"wait-on http://localhost:3000 && opener http://localhost:3000\""
+    "05_single_spa": "concurrently --names \"app-shell,decide   ,inspire  ,checkout \" \"mfserve --listen 3000 --single 05_single_spa/app-shell\" \"mfserve --listen 3001 --cors 05_single_spa/team-decide\" \"mfserve --listen 3002 --cors 05_single_spa/team-inspire\" \"mfserve --listen 3003 --cors 05_single_spa/team-checkout\" \"wait-on http://localhost:3000 && opener http://localhost:3000\""
   },
   "license": "ISC",
-  "dependencies": {
+  "dependencies": { 
     "@microfrontends/serve": "^11.3.0",
     "concurrently": "^6.0.2",
     "opener": "^1.5.2",

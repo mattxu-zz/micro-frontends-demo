@@ -8,10 +8,32 @@ const recos = {
 class InspireRecommendations extends HTMLElement {
   connectedCallback() {
     const sku = this.getAttribute("sku");
-    this.innerHTML = `
-      <div class="inspire_fragment">
-        <h2 class="inspire_headline">Recommendations</h2>
-        <div class="inspire_recommendations">
+    this.attachShadow({ mode: "open" });
+    this.shadowRoot.innerHTML = `
+      <style>
+        :host {
+          text-align: center;
+        }
+        h2 {
+          padding-top: 1em;
+          font-size: 1em;
+          font-weight: normal;
+          text-align: center;
+          text-transform: uppercase;
+          margin: 0;
+        }
+        a {
+          display: inline-block;
+          margin: 1rem;
+          border: 1px solid #333;
+        }
+        img {
+          max-width: 100%;
+          width: 300px;
+        }
+      </style>
+        <h2>Recommendations</h2>
+        <div>
           ${recos[sku]
             .map(
               reco => `<a href="http://localhost:3001/product/${reco}">
@@ -20,7 +42,6 @@ class InspireRecommendations extends HTMLElement {
             )
             .join("\n")}
         </div>
-      </div>
     `;
   }
 }

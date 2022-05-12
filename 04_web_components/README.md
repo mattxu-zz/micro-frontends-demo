@@ -1,8 +1,11 @@
----
-chapter: 5
-tags: [composition, client-side, Web Components]
----
+# Client-side Composition using web component
 
-# Client-side Composition
+Pros
+- Work with any framework (React, Vue, Angular) and with no framework at all
+- HTML Standard
+- No complex dependencies
 
-TBA
+Cons
+- browser support
+- SEO unfriendly
+- no standard way to do SSR
